@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class ElDespertarDelHeroe {
+public class ElDespertarDelHeroe extends Heroe{
     private static final int VIDA_MAXIMA = 100;
     private static final int VIDA_INICIAL = 100;
     private static final int NUM_POCIONES = 3;
@@ -14,6 +14,7 @@ public class ElDespertarDelHeroe {
     private static final int[] VIDAS_ENEMIGOS = (40, 60, 80);
     private static final String[] NOMBRES_ENEMIGOS = ("Guardian de piedra", "Caballero oscuro", "Dragón ancestral");
 
+    // main() inicia el programa
     public static void main(String[] args) {
         Scanner teclado = new Scanner(System.in);
         String[] nombresRanking = new String[CAPACIDAD_RANKING];
@@ -35,6 +36,46 @@ public class ElDespertarDelHeroe {
         while (!salir);
         teclado.close();
     }
-    private static void mostrarMenu(){};
-    private static int leerEnteroEnRango(Scanner teclado, String mensaje, int minimo, int maximo){}
+        
+                // CONSTRUCTOR VACIO
+
+
+    
+                // CONSTRUCTOR CON PARAMETROS
+
+
+
+                // GETTERS Y SETTERS
+        
+
+                //METODOS 
+        
+    // mostrarMenu muestra las opciones principales 
+    private static void mostrarMenu(){
+
+    };
+    // leerEnteroEnRango valida las entradas.
+    private static int leerEnteroEnRango(Scanner teclado, String mensaje, int minimo, int maximo){
+        
+    }
+    // iniciarPartida prepara al héroe y la partida.
+    private static int iniciarPartida(){
+
+    }
+    // simularCombate controla los turnos.
+    private static int simularCombate(){
+
+    }
+// consultarInventario() — muestra las pociones disponibles.    
+private static int consultarInventario(){
+    
+}
+// usarPocion() — cura al héroe y consume una poción.           
+
+// registrarPuntuacion() — introduce el resultado en el ranking.
+
+// mostrarRanking() — enseña las cinco mejores puntuaciones.    
+
+// mostrarAyuda() — explica las reglas.                            
+
 }
