@@ -38,14 +38,89 @@ public class ElDespertarDelHeroe extends Heroe{
     }
         
                 // CONSTRUCTOR VACIO
+                public ElDespertarDelHeroe(){
 
+                }
 
     
                 // CONSTRUCTOR CON PARAMETROS
-
+                
 
 
                 // GETTERS Y SETTERS
+                public static int getVidaMaxima() {
+                    return VIDA_MAXIMA;
+                }
+                public static int[] setVidaMaxima(){
+                    
+        }
+                public static int getVidaInicial() {
+                    return VIDA_INICIAL;
+                }
+                public static int[] setVidaInicial(){
+
+        }
+                public static int getNumPociones() {
+                    return NUM_POCIONES;
+                }
+                public static int[] setNumPociones(){
+
+        }
+                public static int getCuracionPocion() {
+                    return CURACION_POCION;
+                }
+                public static int[] setCuracionPocion(){
+
+        }
+                public static int getAtaqueMinimoHeroe() {
+                    return ATAQUE_MINIMO_HEROE;
+                }
+                public static int[] setAtaqueMinimoHeroe(){
+
+        }
+                public static int getAtaqueMaximoHeroe() {
+                    return ATAQUE_MAXIMO_HEROE;
+                }
+                public static int[] setAtaqueMaximoHeroe(){
+
+        }
+                public static int getAtaqueMinimoEnemigo() {
+                    return ATAQUE_MINIMO_ENEMIGO;
+                }
+                public static int[] setAtaqueMinimoEnemigo(){
+
+        }
+                public static int getAtaqueMaximoEnemigo() {
+                    return ATAQUE_MAXIMO_ENEMIGO;
+                }
+                public static int[] setAtaqueMaximoEnemigo(){
+
+        }
+                public static int getPuntosPorEnemigo() {
+                    return PUNTOS_POR_ENEMIGO;
+                }
+                public static int[] setPuntosPorEnemigo(){
+
+        }
+                public static int getCapacidadRanking() {
+                    return CAPACIDAD_RANKING;
+                }
+                public static int[] setCapacidadRanking(){
+
+        }
+                public static String[] getNombresEnemigos() {
+                    return NOMBRES_ENEMIGOS;
+                }
+                public static int[] setNombresEnemigos(){
+
+        }
+        public static int[] getVidasEnemigos() {
+            return VIDAS_ENEMIGOS;
+        }
+        public static int[] setVidasEnemigos(){
+
+        }
+        
         
 
                 //METODOS 
@@ -72,10 +147,20 @@ private static int consultarInventario(){
 }
 // usarPocion() — cura al héroe y consume una poción.           
 
+private static int usarPocion(){
+
+}
 // registrarPuntuacion() — introduce el resultado en el ranking.
 
+private static int registrarPuntuacion(){
+
+}
 // mostrarRanking() — enseña las cinco mejores puntuaciones.    
+private static int mostrarRanking(){
 
+}
 // mostrarAyuda() — explica las reglas.                            
+private static int mostrarAyuda(){
 
+}
 }
