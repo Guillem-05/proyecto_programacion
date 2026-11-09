@@ -9,7 +9,9 @@ public class Enemigo {
 
 
     // CONSTRUCTOR 
-
+public Enemigo(){
+    
+}
 
 
 

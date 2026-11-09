@@ -9,20 +9,6 @@ public class ElDespertarDelHeroe {
         String[] nombresRanking = new String[CAPACIDAD_RANKING];
         int[] puntosRanking = new int[CAPACIDAD_RANKING];
         int cantidadRanking = 0;
-        boolean salir = false;
-        do {
-            mostrarMenu();
-            int opcion = leerEnteroEnRango(teclado, "Elige una opcion: ", 1, 4);
-            switch (opcion) {
-                case 1:
-
-                    break;
-
-                default:
-                    break;
-            }
-        } while (!salir);
-        teclado.close();
     }
 
     // CONSTRUCTOR VACIO
@@ -42,48 +28,68 @@ public class ElDespertarDelHeroe {
     }
     // METODOS
 
-    // mostrarMenu muestra las opciones principales
-    private static void mostrarMenu() {
 
-    };
 
-    // leerEnteroEnRango valida las entradas.
-    private static int leerEnteroEnRango(Scanner teclado, String mensaje, int minimo, int maximo) {
 
-    }
 
     // iniciarPartida prepara al héroe y la partida.
-    private static int iniciarPartida() {
+    private static void iniciarPartida() {
+        
 
     }
 
     // simularCombate controla los turnos.
-    private static int simularCombate() {
-
+    private static void simularCombate() {
+ 
     }
 
     // consultarInventario() — muestra las pociones disponibles.
-    private static int consultarInventario() {
+    private static void consultarInventario() {
 
     }
     // usarPocion() — cura al héroe y consume una poción.
 
-    private static int usarPocion() {
-
+    private static void usarPocion() {
+        
     }
     // registrarPuntuacion() — introduce el resultado en el ranking.
 
-    private static int registrarPuntuacion() {
-
+    private static void registrarPuntuacion() {
+ 
     }
 
     // mostrarRanking() — enseña las cinco mejores puntuaciones.
-    private static int mostrarRanking() {
-
+    private static void mostrarRanking() {
+ 
     }
 
     // mostrarAyuda() — explica las reglas.
-    private static int mostrarAyuda() {
+    private static void mostrarAyuda() {
+ 
+    }
+
+    private static void vidaActual(){
 
     }
+
+    private static void vidaEnemigo(){
+
+    }
+
+    private static void puntuaciones(){
+
+    }
+
+    private static void nombreJugador(){
+
+    }
+
+    private static void enemigosDerrotados(){
+
+    }
+
+    private static void pocionesDisponibles(){
+
+    }
+
 }
