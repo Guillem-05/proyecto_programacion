@@ -11,7 +11,6 @@ public class Heroe {
 
     public Heroe(String nombre) {
         this.nombre = nombre;
-        this.vidaActual = 100;
     }
 
     public static int getVidaMaxima() {
@@ -45,24 +44,27 @@ public class Heroe {
     public static void setAtaqueMaximoHeroe() {
 
     }
-    public int getVidaActual(){
+
+    public int getVidaActual() {
         return vidaActual;
     }
-    public void setVidaActual(int vidaRestante){
+
+    public void setVidaActual(int vidaRestante) {
         vidaActual = vidaRestante;
     }
 
     // METODOS
 
-    public static int atacarAlEnemigo(){
-         int damage = (int) (Math.random() * (ATAQUE_MAXIMO_HEROE - ATAQUE_MINIMO_HEROE + 1))
-        + ATAQUE_MINIMO_HEROE;
+    public static int atacarAlEnemigo() {
+        int damage = (int) (Math.random() * (ATAQUE_MAXIMO_HEROE - ATAQUE_MINIMO_HEROE + 1))
+                + ATAQUE_MINIMO_HEROE;
 
         return damage;
     }
-    public void recibirDamageEnemigo(int damage){
+
+    public void recibirDamageEnemigo(int damage) {
         int vidaRestante = vidaActual - damage;
         setVidaActual(vidaRestante);
     }
-    
+
 }
