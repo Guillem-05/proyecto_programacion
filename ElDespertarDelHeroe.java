@@ -4,6 +4,7 @@ public class ElDespertarDelHeroe {
     private static final int CAPACIDAD_RANKING = 5;
     private int[] VIDAS_ENEMIGOS = { 40, 60, 80 };
     private String[] NOMBRES_ENEMIGOS = { "Guardian de piedra", "Caballero oscuro", "Dragón ancestral" };
+
     // main() inicia el programa
     public static void main(String[] args) {
         Scanner teclado = new Scanner(System.in);
@@ -12,7 +13,6 @@ public class ElDespertarDelHeroe {
         int cantidadRanking = 0;
         ElDespertarDelHeroe juego = new ElDespertarDelHeroe();
 
-        
         boolean salir = false;
         do {
             mostrarMenu();
@@ -80,13 +80,12 @@ public class ElDespertarDelHeroe {
 
         String nombre = crearNombre(teclado);
 
-        Heroe jugador = new Heroe(nombre);
+        Inventario inventario = new Inventario();
+        Heroe jugador = new Heroe(nombre, inventario);
 
-        Enemigo villano1 = new Enemigo(NOMBRES_ENEMIGOS[0],VIDAS_ENEMIGOS[0]); 
-        System.out.println("WOW QUE NOMBRE" + nombre);
-        System.out.println("");
-        System.out.println("");
-        System.out.println("");
+        Enemigo villano1 = new Enemigo(NOMBRES_ENEMIGOS[0], VIDAS_ENEMIGOS[0]);
+        System.out.println("Encantado Sr. " + nombre);
+        simularCombate(teclado, jugador, villano1);
     }
 
     private static String crearNombre(Scanner teclado) {
@@ -103,12 +102,68 @@ public class ElDespertarDelHeroe {
             ;
         } while (!nombreCorrecto);
 
-        return "";
+        return nombre;
     }
 
     // simularCombate controla los turnos.
-    private static void simularCombate() {
+    private void simularCombate(Scanner teclado, Heroe jugador, Enemigo villano) {
+        boolean combateTerminado = false;
+        boolean gastarTurno = false;
+        while (!combateTerminado) {
+            System.out.println("¿Que accion quieres realizar? ");
+            System.out.println("1- Atacar 2- Usar pocion 3- Consultar Inventario 4- Abandonar ");
+            int respuesta = teclado.nextInt();
+            switch (respuesta) {
+                case 1:
+                    System.out.println("1- Atacar");
+                    int dano = jugador.atacarAlEnemigo();
+                    villano.recibirDamageHeroe(dano);
+                    System.out.println("Le has hecho " + dano);
+                    System.out.println(
+                            "Al " + villano.getNombre() + " le queda " + villano.getVidaActual() + " de vida ");
+                    gastarTurno = true;
+                    break;
 
+                case 2:
+                    System.out.println("Usar pocion ");
+                    gastarTurno = jugador.usarPocion();
+                    break;
+
+                case 3:
+                    System.out.println("Consultar inventario");
+                    jugador.getInventario().mostrarPociones();
+                    gastarTurno = false;
+                    break;
+                case 4:
+                    System.out.println("Salir");
+                    combateTerminado = true;
+                    System.out.println("Hasta la proxima " + jugador.getNombre() + ", el " + villano.getNombre()
+                            + " se ha quedado con las ganas... ");
+                    gastarTurno = false;
+                    break;
+                default:
+                    System.out.println("Respuesta no válida ");
+                    break;
+            }
+            if (gastarTurno) {
+
+                if (villano.getVidaActual() <= 0) {
+                    System.out.println("Villano muerto ");
+                    combateTerminado = true;
+                } else {
+                    System.out.println(villano.getNombre() + " Te ataca");
+                    int dano = villano.atacarAlHeroe();
+                    jugador.recibirDamageEnemigo(dano);
+                    System.out.println("Te ha hecho " + dano + " de daño");
+                    System.out.println(jugador.getNombre() + " te queda " + jugador.getVidaActual() + " de vida ");
+                    if (jugador.getVidaActual() <= 0) {
+                        System.out.println(" Has muerto, " + jugador.getNombre());
+                        combateTerminado = true;
+                    }
+
+                }
+            }
+        }
     }
 
     // consultarInventario() — muestra las pociones disponibles.

@@ -31,7 +31,7 @@ También puede utilizar pociones para recuperar salud y aumentar sus posibilidad
 El héroe dispone inicialmente de tres pociones de curación.
 El inventario permite:
 
-    - Consular las pociones
+    - Consultar las pociones
     - Mostrar la cantidad de pociones restantes.
     - Consumir una poción cuando sea necesario.
     - Evitar utilizar pociones cuando ya no quedan disponibles.

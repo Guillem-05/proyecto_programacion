@@ -16,11 +16,15 @@ public class Enemigo {
     }
 
     // GETTERS Y SETTERS
-    public int getVidaMaxima() {
+
+    public String getNombre(){
+        return  nombre;
+    }
+    private int getVidaMaxima() {
         return VIDA_MAXIMA;
     }
 
-    public void setVidaMaxima() {
+    private void setVidaMaxima() {
 
     }
 
@@ -28,7 +32,7 @@ public class Enemigo {
         return vidaInicial;
     }
 
-    public void setVidaInicial() {
+    private void setVidaInicial() {
 
     }
 
@@ -36,7 +40,7 @@ public class Enemigo {
         return ATAQUE_MINIMO_ENEMIGO;
     }
 
-    public void setAtaqueMinimoEnemigo() {
+    private void setAtaqueMinimoEnemigo() {
 
     }
 
@@ -44,7 +48,7 @@ public class Enemigo {
         return ATAQUE_MAXIMO_ENEMIGO;
     }
 
-    public void setAtaqueMaximoEnemigo() {
+    private void setAtaqueMaximoEnemigo() {
 
     }
 
@@ -52,7 +56,7 @@ public class Enemigo {
         return vidaActual;
     }
 
-    public void setVidaActual(int vidaRestante) {
+    private void setVidaActual(int vidaRestante) {
         vidaActual = vidaRestante;
     }
 
