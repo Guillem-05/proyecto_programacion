@@ -1,17 +1,15 @@
 import java.util.Scanner;
 
 public class ElDespertarDelHeroe {
-    private static final int CAPACIDAD_RANKING = 5;
+   
     private int[] VIDAS_ENEMIGOS = { 40, 60, 80 };
     private String[] NOMBRES_ENEMIGOS = { "Guardian de piedra", "Caballero oscuro", "Dragón ancestral" };
 
     // main() inicia el programa
     public static void main(String[] args) {
         Scanner teclado = new Scanner(System.in);
-        String[] nombresRanking = new String[CAPACIDAD_RANKING];
-        int[] puntosRanking = new int[CAPACIDAD_RANKING];
-        int cantidadRanking = 0;
         ElDespertarDelHeroe juego = new ElDespertarDelHeroe();
+        RankingXML.cargarRanking();
 
         boolean salir = false;
         do {
@@ -20,11 +18,12 @@ public class ElDespertarDelHeroe {
             switch (opcion) {
                 case 1:
                     System.out.println("Iniciar partida ");
-                    Puntuacion puntuacion = juego.iniciarPartida(teclado);
+                    juego.iniciarPartida(teclado);
                     break;
 
                 case 2:
-                    System.out.println("Consultar ranking ");
+                    System.out.println("Consultar ranking");
+                    RankingXML.mostrarRanking();
                     break;
 
                 case 3:
@@ -42,22 +41,7 @@ public class ElDespertarDelHeroe {
         } while (!salir);
         teclado.close();
     }
-
-    // CONSTRUCTOR VACIO
-    public ElDespertarDelHeroe() {
-
-    }
-
-    // CONSTRUCTOR CON PARAMETROS
-
-    // GETTERS Y SETTERS
-    public static int getCapacidadRanking() {
-        return CAPACIDAD_RANKING;
-    }
-
-    public static void setCapacidadRanking() {
-
-    }
+    
 
     // METODOS
     private static void mostrarMenu() {
@@ -74,7 +58,7 @@ public class ElDespertarDelHeroe {
     }
 
     // iniciarPartida prepara al héroe y la partida.
-    private Puntuacion iniciarPartida(Scanner teclado) {
+    private void iniciarPartida(Scanner teclado) {
         System.out.println("Bienvenido héroe");
 
         String nombre = crearNombre(teclado);
@@ -83,7 +67,7 @@ public class ElDespertarDelHeroe {
 
         Inventario inventario = new Inventario();
         Heroe jugador = new Heroe(nombre, inventario);
-        System.out.println("Encantado Sr. " + nombre);
+        System.out.println("Encantado Sr/a. " + nombre);
 
         boolean combateGanado = false;
 
@@ -107,9 +91,10 @@ public class ElDespertarDelHeroe {
             }
 
         }
-        System.out.println(" Tu puntuacion total ha sido " + puntos + " y la puntuacion bonus ha sido " + puntosBonus);
-        Puntuacion puntuacion = new Puntuacion(jugador.getNombre(), puntos);
-        return puntuacion;
+        System.out.println(" Tu puntuación total ha sido " + puntos + " y la puntuación bonus ha sido " + puntosBonus);
+
+        RankingXML.registrarPuntuacion(jugador.getNombre(), puntos);
+
     }
 
     private static String crearNombre(Scanner teclado) {
@@ -136,12 +121,12 @@ public class ElDespertarDelHeroe {
         System.err.println("Te vas a enfrentar contra el " + villano.getNombre());
 
         while (!combateTerminado) {
-            System.out.println("¿Que accion quieres realizar? ");
+            System.out.println("¿Que acción quieres realizar? ");
             System.out.println("1- Atacar 2- Usar pocion 3- Consultar Inventario 4- Abandonar ");
             int respuesta = teclado.nextInt();
             switch (respuesta) {
                 case 1:
-                    
+
                     int dano = jugador.atacarAlEnemigo();
                     villano.recibirDamageHeroe(dano);
                     System.out.println("Le has hecho " + dano + " de daño ");
@@ -160,7 +145,7 @@ public class ElDespertarDelHeroe {
                     break;
                 case 4:
                     combateTerminado = true;
-                    System.out.println("Hasta la proxima " + jugador.getNombre() + ", el " + villano.getNombre()
+                    System.out.println("Hasta la próxima " + jugador.getNombre() + ", el " + villano.getNombre()
                             + " se ha quedado con las ganas... ");
                     gastarTurno = false;
                     return false;
@@ -193,27 +178,7 @@ public class ElDespertarDelHeroe {
         return true;
     }
 
-    // registrarPuntuacion() — introduce el resultado en el ranking.
-
-    private static void registrarPuntuacion() {
-
-    }
-
-    // mostrarRanking() — enseña las cinco mejores puntuaciones.
-    private static void mostrarRanking() {
-
-    }
-
-    // mostrarAyuda() — explica las reglas.
     private static void mostrarAyuda() {
-
-    }
-
-    private static void puntuaciones() {
-
-    }
-
-    private static void enemigosDerrotados() {
 
     }
 
