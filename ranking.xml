@@ -1,16 +1,29 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<ranking>
-                    
-    
-    
+<?xml-stylesheet type="text/xsl" href="consultas.xsl"?><ranking>
+            
     
     <jugadores>
-        
+        <jugador>
+            <nombre>pcc</nombre>
+            <puntuacion>366</puntuacion>
+        </jugador>
+        <jugador>
+            <nombre>Guillem</nombre>
+            <puntuacion>350</puntuacion>
+        </jugador>
+        <jugador>
+            <nombre>Legolas</nombre>
+            <puntuacion>200</puntuacion>
+        </jugador>
+        <jugador>
+            <nombre>Aragorn</nombre>
+            <puntuacion>150</puntuacion>
+        </jugador>
+        <jugador>
+            <nombre>Pruebauno</nombre>
+            <puntuacion>100</puntuacion>
+        </jugador>
     </jugadores>
-                        
-
-
-
-
+        
 
 </ranking>

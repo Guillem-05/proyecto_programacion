@@ -28,6 +28,7 @@ public class ElDespertarDelHeroe {
 
                 case 3:
                     System.out.println("Ayuda");
+                    mostrarAyuda();
                     break;
                 case 4:
                     System.out.println("Salir");
@@ -149,7 +150,6 @@ public class ElDespertarDelHeroe {
                             + " se ha quedado con las ganas... ");
                     gastarTurno = false;
                     return false;
-
                 default:
                     System.out.println("Respuesta no válida ");
                     break;
@@ -157,7 +157,7 @@ public class ElDespertarDelHeroe {
             if (gastarTurno) {
 
                 if (villano.getVidaActual() <= 0) {
-                    System.out.println("El " + villano.getNombre() + "ha muerto ");
+                    System.out.println("El " + villano.getNombre() + " ha muerto ");
                     combateTerminado = true;
 
                 } else {
@@ -178,8 +178,21 @@ public class ElDespertarDelHeroe {
         return true;
     }
 
-    private static void mostrarAyuda() {
+   private static void mostrarAyuda() {
+    System.out.println("Reglas del juego y controles:\n");
 
-    }
+    System.out.println("El héroe comienza con 100 puntos de vida.");
+    System.out.println("El héroe no recupera vida entre combates.");
+    System.out.println("Dispones de 3 pociones durante toda la partida.");
+    System.out.println("Cada poción recupera 25 puntos de vida.");
+    System.out.println("No puedes superar los 100 puntos de vida.");
+    System.out.println("Los combates se realizan por turnos.");
+    System.out.println("El héroe puede atacar a los enemigos.");
+    System.out.println("Los enemigos también pueden atacar al héroe.");
+    System.out.println("Si la vida del héroe llega a 0, termina la partida.");
+    System.out.println("Debes administrar las pociones para sobrevivir.");
+    System.out.println("Al finalizar la partida podrás guardar tu puntuación.");
+    System.out.println("El ranking conserva las 10 mejores puntuaciones.");
+}
 
 }

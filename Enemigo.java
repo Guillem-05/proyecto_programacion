@@ -1,5 +1,4 @@
 public class Enemigo {
-    private static final int VIDA_MAXIMA = 40;
     private int vidaInicial = 100;
     private static final int ATAQUE_MINIMO_ENEMIGO = 5;
     private static final int ATAQUE_MAXIMO_ENEMIGO = 15;
@@ -12,44 +11,24 @@ public class Enemigo {
         this.vidaInicial = vida;
         this.vidaActual = vida;
 
-
     }
 
     // GETTERS Y SETTERS
 
-    public String getNombre(){
-        return  nombre;
-    }
-    private int getVidaMaxima() {
-        return VIDA_MAXIMA;
-    }
-
-    private void setVidaMaxima() {
-
+    public String getNombre() {
+        return nombre;
     }
 
     public int getVidaInicial() {
         return vidaInicial;
     }
 
-    private void setVidaInicial() {
-
-    }
-
     public int getAtaqueMinimoEnemigo() {
         return ATAQUE_MINIMO_ENEMIGO;
     }
 
-    private void setAtaqueMinimoEnemigo() {
-
-    }
-
     public int getAtaqueMaximoEnemigo() {
         return ATAQUE_MAXIMO_ENEMIGO;
-    }
-
-    private void setAtaqueMaximoEnemigo() {
-
     }
 
     public int getVidaActual() {

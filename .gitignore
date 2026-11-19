@@ -1,8 +1,18 @@
 # Compiled class file
 *.class
 
+# Carpetas de compilación
+/bin/
+/out/
+/build/
+/target/
+
 # Log file
 *.log
+
+# Archivos temporales
+*.tmp
+*.bak
 
 # BlueJ files
 *.ctxt
@@ -18,8 +28,16 @@
 *.zip
 *.tar.gz
 *.rar
-Combate.java
+
+# Configuración de editores e IDE
+.idea/
+*.iml
+.settings/
+.project
+.classpath
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
 replay_pid*
+# Archivos temporales de Visual Studio Code
+.vscode/

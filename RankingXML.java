@@ -30,6 +30,7 @@ public class RankingXML {
             }
 
             DocumentBuilderFactory fabrica = DocumentBuilderFactory.newInstance();
+            fabrica.setValidating(true);
 
             DocumentBuilder constructor = fabrica.newDocumentBuilder();
 
